@@ -1,5 +1,7 @@
 @file:OptIn(ExperimentalWasmDsl::class)
 
+import com.vanniktech.maven.publish.JavadocJar
+import com.vanniktech.maven.publish.SourcesJar
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -89,10 +91,33 @@ kotlin {
     }
 }
 
-mavenPublishing {
-    publishToMavenCentral()
+dokka {
+    dokkaSourceSets.all {
+        sourceLink {
+            localDirectory = file("src/commonMain/kotlin")
+            remoteUrl("https://github.com/JesseCorbett/kotlinx-serialization-diff/blob/main/src/commonMain/kotlin")
+            remoteLineSuffix = "#L"
+        }
+    }
+}
 
+val javadocJar by tasks.registering(Jar::class) {
+    group = "dokka"
+    description = "Assembles Javadoc jar file from Dokka HTML output"
+    archiveClassifier = "javadoc"
+
+    dependsOn(tasks.dokkaGenerateHtml)
+}
+
+mavenPublishing {
+    publishToMavenCentral(automaticRelease = true)
     signAllPublications()
+
+    @Suppress("UnstableApiUsage")
+    configureBasedOnAppliedPlugins(
+        javadocJar = JavadocJar.Dokka(taskName = "dokkaGenerate"),
+        sourcesJar = SourcesJar.Sources()
+    )
 
     coordinates(group.toString(), "kotlinx-serialization-diff", version.toString())
 
