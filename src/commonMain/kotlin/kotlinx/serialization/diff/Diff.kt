@@ -1,5 +1,8 @@
 package kotlinx.serialization.diff
 
+import kotlinx.serialization.modules.EmptySerializersModule
+import kotlinx.serialization.modules.SerializersModule
+
 /**
  * Strategy to use when diffing lists / collections.
  */
@@ -21,7 +24,8 @@ public enum class ListDiffStrategy {
  * Configuration options for the diffing process.
  */
 public data class DiffConfig(
-    val listStrategy: ListDiffStrategy = ListDiffStrategy.INDEX_BY_INDEX
+    val listStrategy: ListDiffStrategy = ListDiffStrategy.INDEX_BY_INDEX,
+    val serializersModule: SerializersModule = EmptySerializersModule()
 )
 
 /**

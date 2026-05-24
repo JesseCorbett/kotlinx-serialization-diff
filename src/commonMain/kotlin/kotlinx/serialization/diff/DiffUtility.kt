@@ -12,7 +12,7 @@ public inline fun <reified T> diff(
     config: DiffConfig = DiffConfig()
 ): List<Diff> {
     val serializer = serializer<T>()
-    val format = TreeFormat()
+    val format = TreeFormat(config.serializersModule)
     val leftTree = format.toTree(serializer, left)
     val rightTree = format.toTree(serializer, right)
 
