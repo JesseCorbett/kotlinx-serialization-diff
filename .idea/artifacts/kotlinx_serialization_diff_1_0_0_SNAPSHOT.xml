@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="kotlinx-serialization-diff-1.0.0-SNAPSHOT">
+    <output-path>$PROJECT_DIR$/build/libs</output-path>
+    <root id="archive" name="kotlinx-serialization-diff-1.0.0-SNAPSHOT.jar">
+      <element id="module-output" name="kotlinx-serialization-diff.androidMain" />
+    </root>
+  </artifact>
+</component>
