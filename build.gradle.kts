@@ -96,10 +96,10 @@ mavenPublishing {
     coordinates(group.toString(), "kotlinx-serialization-diff", version.toString())
 
     pom {
-        name = "Fibonacci library"
-        description = "A mathematics calculation library."
-        inceptionYear = "2024"
-        url = "https://github.com/kotlin-hands-on/fibonacci/"
+        name = "kotlinx-serialization-diff"
+        description = "A diffing library for Kotlin/Multiplatform which uses kotlinx.serialization for performant diffing without reflection"
+        inceptionYear = "2026"
+        url = "https://github.com/JesseCorbett/kotlinx-serialization-diff"
         licenses {
             license {
                 name = "The Apache License, Version 2.0"
@@ -109,15 +109,15 @@ mavenPublishing {
         }
         developers {
             developer {
-                id = "kotlin-hands-on"
-                name = "Kotlin Developer Advocate"
-                url = "https://github.com/kotlin-hands-on/"
+                id = "jesse corbett"
+                name = "Jesse Corbett"
+                email = "jesselcorbett@gmail.com"
             }
         }
         scm {
-            url = "https://github.com/kotlin-hands-on/fibonacci/"
-            connection = "scm:git:git://github.com/kotlin-hands-on/fibonacci.git"
-            developerConnection = "scm:git:ssh://git@github.com/kotlin-hands-on/fibonacci.git"
+            url = "https://github.com/JesseCorbett/kotlinx-serialization-diff"
+            connection = "scm:git:git://github.com/JesseCorbett/kotlinx-serialization-diff.git"
+            developerConnection = "scm:git:ssh://git@github.com/JesseCorbett/kotlinx-serialization-diff.git"
         }
     }
 }
