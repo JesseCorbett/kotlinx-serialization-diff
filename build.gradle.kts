@@ -8,6 +8,7 @@ plugins {
     kotlin("plugin.serialization") version "2.3.21"
     id("com.android.kotlin.multiplatform.library") version "9.2.1"
     id("com.vanniktech.maven.publish") version "0.36.0"
+    id("org.jetbrains.dokka") version "2.2.0"
 }
 
 group = "com.jessecorbett"
