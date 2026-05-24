@@ -4,6 +4,8 @@
 
 A diffing library for Kotlin/Multiplatform which uses `kotlinx.serialization` for performant, type-safe diffing without reflection.
 
+[Dokka Documentation](https://jessecorbett.github.io/kotlinx-serialization-diff/)
+
 ## Features
 
 - **Multiplatform**: Supports JVM, JS, Wasm, Android, iOS, and Native targets.
